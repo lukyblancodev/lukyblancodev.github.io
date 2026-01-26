@@ -1,34 +1,282 @@
-# Divyo – Estándares de Seguridad Infantil (EASI/CSAE)
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <title>Divyo - Estándares de Seguridad Infantil (EASI/CSAE)</title>
+  <meta name="description" content="Estándares de seguridad infantil de Divyo - Gastos Compartidos. Prohibición explícita de explotación y abuso sexual infantil (EASI/CSAE) y canales de contacto." />
 
-**Última actualización:** 26/01/2026
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --text:#e9ecf5;
+      --muted:#b9c0d9;
+      --brand:#7c5cff;
+      --ok:#23c483;
+      --warn:#ffcc66;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 12px 30px rgba(0,0,0,.30);
+      --radius:16px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(900px 500px at 15% 10%, rgba(124,92,255,.35), transparent 55%),
+                  radial-gradient(900px 500px at 80% 0%, rgba(35,196,131,.20), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{ color:var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
-En **Divyo – Gastos Compartidos** (“Divyo”), nos comprometemos a proteger la seguridad de niños y adolescentes y **prohibimos explícitamente cualquier forma de explotación y abuso sexual infantil**, incluyendo **material de abuso sexual infantil (CSAE)**.
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 28px 18px 48px; }
 
-## 1. Prohibición explícita (EASI/CSAE)
+    header{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-bottom:18px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(124,92,255,.16);
+      border:1px solid rgba(124,92,255,.35);
+      width:fit-content;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .dot{
+      width:9px; height:9px; border-radius:50%;
+      background: var(--ok);
+      box-shadow: 0 0 0 4px rgba(35,196,131,.14);
+    }
+    h1{
+      font-size: clamp(26px, 4vw, 40px);
+      line-height:1.15;
+      margin:0;
+      letter-spacing:-.02em;
+    }
+    .subtitle{
+      color:var(--muted);
+      margin:0;
+      max-width: 70ch;
+    }
 
-Divyo **no permite, no tolera, no promueve y no facilita**:
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      margin-top: 18px;
+    }
+    @media (min-width: 860px){
+      .grid{ grid-template-columns: 1.4fr .6fr; }
+    }
 
-* Contenido relacionado con **explotación o abuso sexual infantil (EASI/CSAE)**,
-* Solicitud, distribución, almacenamiento o promoción de material CSAE,
-* Cualquier conducta que ponga en riesgo la seguridad de menores.
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 18px;
+    }
 
-## 2. Reporte de incidentes
+    h2{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing:-.01em;
+    }
+    p{ margin: 0 0 12px; color: var(--text); }
+    .muted{ color: var(--muted); }
 
-Los usuarios pueden **reportar** problemas relacionados con seguridad infantil desde la aplicación o contactándonos por email:
+    ul{
+      margin: 10px 0 14px 20px;
+      padding:0;
+      color: var(--text);
+    }
+    li{ margin: 8px 0; }
+    .hr{
+      height:1px;
+      background: var(--line);
+      margin: 14px 0;
+    }
 
-📧 **[lukyblancodev@gmail.com](mailto:lukyblancodev@gmail.com)**
+    .callout{
+      border-radius: 14px;
+      padding: 14px 14px;
+      border:1px solid rgba(255,204,102,.35);
+      background: rgba(255,204,102,.10);
+    }
+    .callout strong{ color: var(--warn); }
 
-Revisaremos los reportes y, de corresponder, tomaremos acciones apropiadas, incluyendo restricciones y/o bloqueos de uso, y colaboración con autoridades cuando aplique.
+    .kpi{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .pill{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(17,26,51,.55);
+    }
+    .icon{
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      display:grid;
+      place-items:center;
+      background: rgba(124,92,255,.16);
+      border:1px solid rgba(124,92,255,.35);
+      flex: 0 0 auto;
+    }
+    .pill h3{
+      margin:0;
+      font-size: 14px;
+      letter-spacing:-.01em;
+    }
+    .pill p{ margin: 2px 0 0; font-size: 13px; color: var(--muted); }
 
-## 3. Cumplimiento legal y cooperación
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12.5px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      align-items:flex-start;
+    }
+    .small{
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    code{
+      background: rgba(255,255,255,.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+  </style>
+</head>
 
-Divyo cumple con las leyes aplicables de seguridad infantil y, ante casos que lo requieran, **reportará a las autoridades competentes** y cooperará con investigaciones relacionadas con EASI/CSAE.
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge"><span class="dot"></span> Estándares publicados · Seguridad infantil</div>
+      <h1>Divyo – Estándares de Seguridad Infantil (EASI/CSAE)</h1>
+      <p class="subtitle">
+        En <strong>Divyo – Gastos Compartidos</strong> (“Divyo”) nos comprometemos a proteger la seguridad de niños y adolescentes.
+        Estos estándares prohíben explícitamente la <strong>explotación y el abuso sexual infantil</strong>, incluyendo
+        <strong>CSAE</strong> (Child Sexual Abuse and Exploitation) / <strong>EASI</strong> (Explotación y Abuso Sexual Infantil).
+      </p>
+      <p class="small"><strong>Última actualización:</strong> 26/01/2026</p>
+    </header>
 
-## 4. Identificación
+    <div class="grid">
+      <!-- Main content -->
+      <main class="card" aria-label="Estándares de seguridad infantil">
+        <h2>1) Prohibición explícita (EASI/CSAE)</h2>
+        <p>
+          Divyo <strong>no permite, no tolera, no promueve y no facilita</strong> ninguna forma de contenido, conducta o actividad
+          relacionada con la explotación y el abuso sexual infantil (EASI/CSAE).
+        </p>
 
-Estos estándares aplican a:
+        <ul>
+          <li>Material de abuso sexual infantil (CSAE), su solicitud, distribución, promoción o almacenamiento.</li>
+          <li>Grooming, captación o cualquier interacción que ponga en riesgo la seguridad de menores.</li>
+          <li>Contenido que sexualice a menores o los exponga a situaciones de explotación o abuso.</li>
+        </ul>
 
-* **Aplicación:** Divyo – Gastos Compartidos
-* **Desarrollador:** lukyblanco_dev
+        <div class="callout">
+          <strong>Importante:</strong> Ante sospecha o evidencia de EASI/CSAE, tomaremos acciones apropiadas y,
+          cuando corresponda, cooperaremos con las autoridades competentes.
+        </div>
 
-© Divyo – Gastos Compartidos
+        <div class="hr"></div>
+
+        <h2>2) Reporte de incidentes</h2>
+        <p>
+          Si creés que existe un problema de seguridad infantil relacionado con el uso de Divyo, podés reportarlo:
+        </p>
+        <ul>
+          <li>Contactando al equipo responsable a: <a href="mailto:lukyblancodev@gmail.com?subject=Divyo%20-%20Reporte%20Seguridad%20Infantil%20(EASI%2FCSAE)">lukyblancodev@gmail.com</a></li>
+        </ul>
+
+        <p class="muted">
+          Incluí, si podés: descripción del problema, fecha aproximada, capturas (si aplica) y cualquier dato adicional que ayude a investigarlo.
+        </p>
+
+        <div class="hr"></div>
+
+        <h2>3) Cumplimiento legal y cooperación</h2>
+        <p>
+          Divyo cumple con las leyes aplicables relacionadas con seguridad infantil y, ante casos que lo requieran,
+          <strong>reportará a las autoridades competentes</strong> y cooperará con investigaciones relacionadas con EASI/CSAE.
+        </p>
+
+        <div class="hr"></div>
+
+        <h2>4) Alcance e identificación</h2>
+        <p class="muted">
+          Estos estándares aplican a:
+        </p>
+        <ul>
+          <li><strong>Aplicación:</strong> Divyo – Gastos Compartidos</li>
+          <li><strong>Desarrollador:</strong> lukyblanco_dev</li>
+        </ul>
+
+        <p class="muted">
+          Si estos estándares se actualizan, se publicará la nueva versión en esta misma URL.
+        </p>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="card kpi" aria-label="Información rápida">
+        <div class="pill">
+          <div class="icon">🛡️</div>
+          <div>
+            <h3>Prohibición explícita</h3>
+            <p>Menciona EASI/CSAE y establece tolerancia cero.</p>
+          </div>
+        </div>
+        <div class="pill">
+          <div class="icon">📩</div>
+          <div>
+            <h3>Canal de reporte</h3>
+            <p>Email directo para reportar incidentes.</p>
+          </div>
+        </div>
+        <div class="pill">
+          <div class="icon">⚖️</div>
+          <div>
+            <h3>Cooperación</h3>
+            <p>Compromiso de acciones y colaboración con autoridades.</p>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <p class="small">
+          Tip Play Console: en el campo <code>URL de estándares de seguridad</code> debe ir esta página (no la Privacy Policy).
+        </p>
+      </aside>
+    </div>
+
+    <footer>
+      <div>© 2026 Divyo – Gastos Compartidos</div>
+      <div class="muted">Contacto: <a href="mailto:lukyblancodev@gmail.com">lukyblancodev@gmail.com</a></div>
+    </footer>
+  </div>
+</body>
+</html>
