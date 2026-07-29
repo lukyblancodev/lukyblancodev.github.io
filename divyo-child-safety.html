@@ -4,251 +4,582 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index,follow" />
-  <title>Divyo - Estándares de Seguridad Infantil (EASI/CSAE)</title>
-  <meta name="description" content="Estándares de seguridad infantil de Divyo - Gastos Compartidos. Prohibición explícita de explotación y abuso sexual infantil (EASI/CSAE) y canales de contacto." />
+
+  <title>Divyo – Estándares de Seguridad Infantil</title>
+
+  <meta
+    name="description"
+    content="Estándares de Seguridad Infantil de Divyo – Gastos Compartidos. Prohibición de explotación y abuso sexual infantil (EASI/CSAE)."
+  />
+
+  <meta name="theme-color" content="#087f70" />
 
   <style>
-    :root{
-      --bg:#0b1020;
-      --card:#111a33;
-      --text:#e9ecf5;
-      --muted:#b9c0d9;
-      --brand:#7c5cff;
-      --ok:#23c483;
-      --warn:#ffcc66;
-      --line:rgba(255,255,255,.10);
-      --shadow: 0 12px 30px rgba(0,0,0,.30);
-      --radius:16px;
-    }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(900px 500px at 15% 10%, rgba(124,92,255,.35), transparent 55%),
-                  radial-gradient(900px 500px at 80% 0%, rgba(35,196,131,.20), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.6;
-    }
-    a{ color:var(--brand); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    :root {
+      --brand: #087f70;
+      --brand-dark: #05675d;
+      --brand-soft: #9feadf;
+      --brand-pale: #eaf9f6;
 
-    .wrap{ max-width: 980px; margin: 0 auto; padding: 28px 18px 48px; }
+      --bg: #f6fbfa;
+      --surface: #ffffff;
+      --surface-soft: #f0f8f6;
 
-    header{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      margin-bottom:18px;
+      --text: #14211f;
+      --muted: #60706c;
+
+      --line: #d9e8e4;
+
+      --warning: #b66b13;
+      --warning-bg: #fff6e8;
+      --warning-line: #f0d5a9;
+
+      --shadow: 0 12px 32px rgba(26, 80, 70, 0.08);
+      --radius: 22px;
+      --maxw: 920px;
     }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:7px 12px;
-      border-radius:999px;
-      background:rgba(124,92,255,.16);
-      border:1px solid rgba(124,92,255,.35);
-      width:fit-content;
-      font-size: 13px;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
       color: var(--text);
-    }
-    .dot{
-      width:9px; height:9px; border-radius:50%;
-      background: var(--ok);
-      box-shadow: 0 0 0 4px rgba(35,196,131,.14);
-    }
-    h1{
-      font-size: clamp(26px, 4vw, 40px);
-      line-height:1.15;
-      margin:0;
-      letter-spacing:-.02em;
-    }
-    .subtitle{
-      color:var(--muted);
-      margin:0;
-      max-width: 70ch;
+      background:
+        radial-gradient(
+          900px 480px at 85% -80px,
+          rgba(159, 234, 223, 0.45),
+          transparent 60%
+        ),
+        var(--bg);
+      line-height: 1.7;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:16px;
-      margin-top: 18px;
-    }
-    @media (min-width: 860px){
-      .grid{ grid-template-columns: 1.4fr .6fr; }
+    a {
+      color: var(--brand);
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px 18px;
+    a:hover {
+      text-decoration: underline;
     }
 
-    h2{
-      margin: 0 0 8px;
-      font-size: 18px;
-      letter-spacing:-.01em;
-    }
-    p{ margin: 0 0 12px; color: var(--text); }
-    .muted{ color: var(--muted); }
-
-    ul{
-      margin: 10px 0 14px 20px;
-      padding:0;
-      color: var(--text);
-    }
-    li{ margin: 8px 0; }
-    .hr{
-      height:1px;
-      background: var(--line);
-      margin: 14px 0;
+    .wrap {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    .callout{
-      border-radius: 14px;
-      padding: 14px 14px;
-      border:1px solid rgba(255,204,102,.35);
-      background: rgba(255,204,102,.10);
+    .hero {
+      padding: 52px 0 40px;
     }
-    .callout strong{ color: var(--warn); }
 
-    .kpi{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-    .pill{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding: 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(17,26,51,.55);
-    }
-    .icon{
-      width: 30px;
-      height: 30px;
-      border-radius: 10px;
-      display:grid;
-      place-items:center;
-      background: rgba(124,92,255,.16);
-      border:1px solid rgba(124,92,255,.35);
-      flex: 0 0 auto;
-    }
-    .pill h3{
-      margin:0;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--brand-dark);
       font-size: 14px;
-      letter-spacing:-.01em;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
-    .pill p{ margin: 2px 0 0; font-size: 13px; color: var(--muted); }
 
-    footer{
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 12.5px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      align-items:flex-start;
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: #fff;
+      background: var(--brand);
+      box-shadow: 0 8px 18px rgba(8, 127, 112, 0.2);
+      font-size: 20px;
+      font-weight: 900;
     }
-    .small{
-      font-size: 12.5px;
-      color: var(--muted);
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border: 1px solid rgba(8, 127, 112, 0.16);
+      border-radius: 999px;
+      background: var(--brand-pale);
+      color: var(--brand-dark);
+      font-size: 13px;
+      font-weight: 700;
     }
-    code{
-      background: rgba(255,255,255,.06);
-      padding: 2px 6px;
-      border-radius: 8px;
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(8, 127, 112, 0.12);
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 0;
+      font-size: clamp(30px, 6vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .updated {
+      display: inline-flex;
+      margin-top: 22px;
+      padding: 8px 12px;
+      border: 1px solid rgba(8, 127, 112, 0.15);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .summary-card {
+      padding: 18px;
       border: 1px solid var(--line);
-      color: var(--text);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow: var(--shadow);
+    }
+
+    .summary-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      background: var(--brand-pale);
+      color: var(--brand-dark);
+      font-weight: 900;
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
+    }
+
+    .summary-card span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .content {
+      margin-bottom: 42px;
+      padding: 14px 34px 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+      padding-bottom: 4px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 12px 0 16px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .warning {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid var(--warning-line);
+      border-radius: 16px;
+      background: var(--warning-bg);
+    }
+
+    .warning strong {
+      color: var(--warning);
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface-soft);
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 14px;
+      background: var(--brand);
+      color: white;
+      font-weight: 800;
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        padding-top: 36px;
+      }
+
+      .summary {
+        grid-template-columns: 1fr;
+      }
+
+      .content {
+        padding: 4px 20px 24px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <div class="badge"><span class="dot"></span> Estándares publicados · Seguridad infantil</div>
-      <h1>Divyo – Estándares de Seguridad Infantil (EASI/CSAE)</h1>
-      <p class="subtitle">
-        En <strong>Divyo – Gastos Compartidos</strong> (“Divyo”) nos comprometemos a proteger la seguridad de niños y adolescentes.
-        Estos estándares prohíben explícitamente la <strong>explotación y el abuso sexual infantil</strong>, incluyendo
-        <strong>CSAE</strong> (Child Sexual Abuse and Exploitation) / <strong>EASI</strong> (Explotación y Abuso Sexual Infantil).
+
+  <header class="hero">
+    <div class="wrap">
+
+      <div class="brand">
+        <span class="brand-mark">D</span>
+        Divyo · Gastos Compartidos
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Estándares publicados de seguridad infantil
+      </div>
+
+      <h1>
+        Estándares de Seguridad Infantil
+      </h1>
+
+      <p class="hero-copy">
+        Divyo mantiene una política de tolerancia cero frente a cualquier
+        forma de explotación y abuso sexual infantil (EASI/CSAE).
       </p>
-      <p class="small"><strong>Última actualización:</strong> 26/01/2026</p>
-    </header>
 
-    <div class="grid">
-      <!-- Main content -->
-      <main class="card" aria-label="Estándares de seguridad infantil">
-        <h2>1) Prohibición explícita (EASI/CSAE)</h2>
-        <p>
-          Divyo <strong>no permite, no tolera, no promueve y no facilita</strong> ninguna forma de contenido, conducta o actividad
-          relacionada con la explotación y el abuso sexual infantil (EASI/CSAE).
-        </p>
+      <div class="updated">
+        <strong>Última actualización:&nbsp;</strong> 29/07/2026
+      </div>
 
-        <ul>
-          <li>Material de abuso sexual infantil (CSAE), su solicitud, distribución, promoción o almacenamiento.</li>
-          <li>Grooming, captación o cualquier interacción que ponga en riesgo la seguridad de menores.</li>
-          <li>Contenido que sexualice a menores o los exponga a situaciones de explotación o abuso.</li>
-        </ul>
+    </div>
+  </header>
 
-        <div class="callout">
-          <strong>Importante:</strong> Ante sospecha o evidencia de EASI/CSAE, tomaremos acciones apropiadas y,
-          cuando corresponda, cooperaremos con las autoridades competentes.
-        </div>
+  <main class="wrap">
 
-        <div class="hr"></div>
+    <div class="summary">
 
-        <h2>2) Reporte de incidentes</h2>
-        <p>
-          Si creés que existe un problema de seguridad infantil relacionado con el uso de Divyo, podés reportarlo:
-        </p>
-        <ul>
-          <li>Contactando al equipo responsable a: <a href="mailto:lukyblancodev@gmail.com?subject=Divyo%20-%20Reporte%20Seguridad%20Infantil%20(EASI%2FCSAE)">lukyblancodev@gmail.com</a></li>
-        </ul>
+      <div class="summary-card">
+        <div class="summary-icon">✓</div>
+        <strong>Tolerancia cero</strong>
+        <span>
+          Divyo prohíbe cualquier forma de EASI/CSAE.
+        </span>
+      </div>
 
-        <p class="muted">
-          Incluí, si podés: descripción del problema, fecha aproximada, capturas (si aplica) y cualquier dato adicional que ayude a investigarlo.
-        </p>
+      <div class="summary-card">
+        <div class="summary-icon">!</div>
+        <strong>Canal de reporte</strong>
+        <span>
+          Existe un contacto directo para reportar incidentes.
+        </span>
+      </div>
 
-        <div class="hr"></div>
+      <div class="summary-card">
+        <div class="summary-icon">§</div>
+        <strong>Cumplimiento</strong>
+        <span>
+          Se cooperará con las autoridades cuando corresponda.
+        </span>
+      </div>
 
-        <h2>3) Cumplimiento legal y cooperación</h2>
-        <p>
-          Divyo cumple con las leyes aplicables relacionadas con seguridad infantil y, ante casos que lo requieran,
-          <strong>reportará a las autoridades competentes</strong> y cooperará con investigaciones relacionadas con EASI/CSAE.
-        </p>
-
-        <div class="hr"></div>
-
-        <h2>4) Alcance e identificación</h2>
-        <p class="muted">
-          Estos estándares aplican a:
-        </p>
-        <ul>
-          <li><strong>Aplicación:</strong> Divyo – Gastos Compartidos</li>
-          <li><strong>Desarrollador:</strong> lukyblanco_dev</li>
-        </ul>
-
-        <p class="muted">
-          Si estos estándares se actualizan, se publicará la nueva versión en esta misma URL.
-        </p>
-      </main>
-
-      
-      
     </div>
 
-    <footer>
-      <div>© 2026 Divyo – Gastos Compartidos</div>
-      <div class="muted">Contacto: <a href="mailto:lukyblancodev@gmail.com">lukyblancodev@gmail.com</a></div>
-    </footer>
-  </div>
+    <article class="content">
+
+      <section>
+        <h2>1. Compromiso de Divyo</h2>
+
+        <p>
+          En <strong>Divyo – Gastos Compartidos</strong> nos comprometemos a
+          proteger la seguridad de niños y adolescentes.
+        </p>
+
+        <p>
+          Estos estándares prohíben explícitamente cualquier forma de
+          <strong>explotación y abuso sexual infantil</strong>, incluyendo
+          CSAE (<em>Child Sexual Abuse and Exploitation</em>) y EASI
+          (Explotación y Abuso Sexual Infantil).
+        </p>
+
+        <p>
+          Divyo no incluye funciones de publicación pública de contenido,
+          perfiles sociales ni mensajería entre usuarios.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Prohibición explícita de EASI/CSAE</h2>
+
+        <p>
+          Divyo <strong>no permite, no tolera, no promueve y no facilita</strong>
+          contenido, conducta o actividad relacionada con la explotación y
+          el abuso sexual infantil.
+        </p>
+
+        <ul>
+          <li>
+            Material de abuso sexual infantil, su solicitud, producción,
+            distribución, promoción o almacenamiento.
+          </li>
+
+          <li>
+            Grooming, captación o cualquier interacción destinada a explotar
+            o poner en riesgo a menores.
+          </li>
+
+          <li>
+            Contenido que sexualice a menores o los exponga a situaciones de
+            explotación o abuso.
+          </li>
+
+          <li>
+            Cualquier actividad que facilite, incentive o normalice estas
+            conductas.
+          </li>
+        </ul>
+
+        <div class="warning">
+          <strong>Importante:</strong>
+          ante una sospecha o evidencia relacionada con EASI/CSAE,
+          se evaluarán las acciones correspondientes y, cuando sea aplicable,
+          se cooperará con las autoridades competentes.
+        </div>
+      </section>
+
+      <section>
+        <h2>3. Reporte de incidentes</h2>
+
+        <p>
+          Si considerás que existe un problema de seguridad infantil
+          relacionado con Divyo, podés comunicarlo directamente al
+          desarrollador.
+        </p>
+
+        <div class="contact-card">
+
+          <div class="contact-icon">@</div>
+
+          <div>
+            <strong>Contacto para reportes</strong>
+
+            <a
+              href="mailto:lukyblancodev@gmail.com?subject=Divyo%20-%20Reporte%20de%20Seguridad%20Infantil"
+            >
+              lukyblancodev@gmail.com
+            </a>
+          </div>
+
+        </div>
+
+        <p class="muted" style="margin-top:14px">
+          Cuando sea posible, incluí una descripción del incidente, fecha
+          aproximada y cualquier información que permita comprender mejor el
+          problema.
+        </p>
+
+        <p class="muted">
+          No compartas material ilegal ni contenido sensible innecesariamente
+          para realizar un reporte.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Cumplimiento legal y cooperación</h2>
+
+        <p>
+          Divyo procurará actuar conforme a las leyes aplicables relacionadas
+          con seguridad infantil.
+        </p>
+
+        <p>
+          Cuando una situación requiera intervención legal, se podrá cooperar
+          con las autoridades competentes y atender requerimientos legítimos
+          relacionados con investigaciones de EASI/CSAE.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Naturaleza de la aplicación</h2>
+
+        <p>
+          Divyo es una herramienta para gestionar gastos compartidos.
+        </p>
+
+        <p>
+          La aplicación no está diseñada como una plataforma social y no
+          ofrece:
+        </p>
+
+        <ul>
+          <li>publicación pública de contenido;</li>
+          <li>mensajería entre usuarios;</li>
+          <li>perfiles sociales públicos;</li>
+          <li>búsqueda o contacto entre desconocidos.</li>
+        </ul>
+
+        <p>
+          La función Compartir utiliza el mecanismo estándar del dispositivo
+          y requiere una acción explícita del usuario.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Alcance e identificación</h2>
+
+        <ul>
+          <li>
+            <strong>Aplicación:</strong>
+            Divyo – Gastos Compartidos
+          </li>
+
+          <li>
+            <strong>Desarrollador:</strong>
+            lukyblanco_dev
+          </li>
+
+          <li>
+            <strong>Contacto:</strong>
+            <a href="mailto:lukyblancodev@gmail.com">
+              lukyblancodev@gmail.com
+            </a>
+          </li>
+        </ul>
+
+        <p>
+          Si estos estándares se actualizan, la versión vigente será
+          publicada en esta misma URL.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Política de Privacidad</h2>
+
+        <p>
+          Para conocer qué información trata Divyo y cómo se utiliza,
+          consultá nuestra
+          <a href="divyo-privacy.html">
+            Política de Privacidad
+          </a>.
+        </p>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+
+      <div>
+        © 2026 Divyo – Gastos Compartidos
+      </div>
+
+      <nav class="footer-links" aria-label="Enlaces legales">
+        <a href="divyo-privacy.html">Privacidad</a>
+        <a href="divyo-child-safety.html">Seguridad infantil</a>
+      </nav>
+
+    </div>
+  </footer>
+
 </body>
 </html>
